@@ -18,7 +18,7 @@ const Summary = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const {data} = await axios.post('/api/v1/openai/summary', { text });        // ERROR PART
+      const {data} = await axios.post('/api/v1/openai/summary', { text });
       // console.log(data);
       setSummary(data);
     }

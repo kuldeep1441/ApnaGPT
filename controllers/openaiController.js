@@ -7,7 +7,7 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
-exports.summaryController = async (req, res)=>{              // ERROR PART
+exports.summaryController = async (req, res)=>{
     try{
         const {text} = req.body
         const {data} = await openai.createCompletion({
@@ -57,9 +57,7 @@ exports.chatbotController = async (req, res) => {
     const { text } = req.body;
     const { data } = await openai.createCompletion({
       model: "text-davinci-003",
-      prompt: `Answer question similar to how yoda from star war would.
-      Me: 'what is your name?'
-      yoda: 'yoda is my name'
+      prompt: `Answer question similar to ChatBot.
       Me: ${text}`,
       max_tokens: 300,
       temperature: 0.7,
